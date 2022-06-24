@@ -19,6 +19,10 @@
   @include btn;
 }
 
+.active {
+  color: $tt-cl-gn;
+  border-bottom: 2px solid $tt-cl-gn;
+}
 
 
 
