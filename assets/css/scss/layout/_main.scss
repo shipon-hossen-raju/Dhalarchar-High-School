@@ -1,0 +1,547 @@
+header#main-header {
+  padding: 14px 0;
+  line-height: 0;
+  box-shadow: 0 2px 3px #00000026;
+
+  .container {
+    @include flex-layout;
+
+    .logo-title {
+      @include flex-layout;
+
+      .logo {
+        width: 3em;
+        margin-right: 6px;
+      }
+
+      .title {
+        h1 {
+          font-size: 1.4em;
+          margin-left: 4px;
+        }
+      }
+    }
+
+    .main-menu {
+      ul {
+        @include flex-layout;
+
+        li {
+          a {
+            font-size: 1.1em;
+            padding: 9px 9px;
+            margin: 0 4px;
+            display: inline;
+
+            &:hover,
+            &.active {
+              color: $tt-cl-gn;
+              border-bottom: 2px solid $tt-cl-gn;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+
+  i {
+    @include border-radius(3px);
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &.fa-facebook-square,
+    &.fa-facebook {
+      color: $facebook-cl;
+    }
+
+    &.fa-youtube-square,
+    &.fa-youtube {
+      color: $youtube-cl;
+    }
+
+    &.fa-twitter-square,
+    &.fa-twitter {
+      color: $twitter-cl;
+    }
+
+    &.fa-instagram-square,
+    &.fa-instagram {
+      color: $instagram-cl;
+    }
+  }
+
+  .active {
+    color: $tt-cl-gn;
+    border-bottom: 2px solid $tt-cl-gn;
+  }
+
+  .container {
+    @include flex-layout($ai: flex-start);
+    flex-wrap: wrap;
+    padding: 0 5px;
+
+    .left-side,
+    .right-side {
+      flex-basis: 15.5%;
+      margin: 13px 0.30%;
+      // padding: 9px;
+    }
+
+    .emergency-link {
+      @include mrg-pdn-bxSD;
+
+      h2 {
+        font-size: 1.1em;
+        text-align: center;
+        font-family: 'Tiro Bangla', serif;
+        @include box-headline;
+      }
+
+      h5 {
+        font-size: 1.2em;
+        text-transform: capitalize;
+        color: #f00;
+        border-bottom: 2px solid #f00;
+        display: inline-block;
+        line-height: 15px;
+      }
+
+      .date-coment {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: .8em;
+        color: #a1a1a1;
+        margin-bottom: 8px;
+        text-transform: capitalize;
+      }
+
+      p {
+        margin: 14px 0px;
+        text-transform: capitalize;
+      }
+
+      &>a {
+        color: #2bff00;
+        text-transform: capitalize;
+      }
+
+      ul {
+        li {
+
+          &:hover {
+            a {
+              color: $tt-cl-rd;
+              border-color: $bd-cl-rd;
+            }
+          }
+
+          a {
+            padding: 2px 0;
+            border-bottom: 2px solid #a9a9a996;
+            display: block;
+          }
+
+          &:last-child {
+            a {
+              border-bottom: none;
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+
+    .slide {
+      i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        width: 15%;
+        justify-content: center;
+        color: $tt-cl-bl;
+        cursor: pointer;
+        @include transition(.5s);
+
+        &::before {
+          content: " ";
+          @include transition(.3s);
+        }
+
+        &:hover::before {
+          content: '\f053';
+        }
+
+        &:nth-child(2):hover::before {
+          content: '\f054';
+        }
+
+        &.fa-chevron-right {
+          right: 0;
+          @include transition(.3s);
+
+          &:hover {
+            background: linear-gradient(to left, #53535344, #ffffff00);
+          }
+        }
+
+        &.fa-chevron-left {
+          left: 0;
+          @include transition(.3s);
+
+          &:hover {
+            background: linear-gradient(to right, #5d5d5d85, #53535300);
+          }
+        }
+      }
+    }
+
+    .left-side {
+      .left-menu {
+        text-transform: capitalize;
+        @include mrg-pdn-bxSD;
+
+        h1 {
+          text-align: center;
+          padding: 10px 5px;
+          color: $tt-cl-bl;
+          font-size: 1.6em;
+        }
+
+        ul {
+          li {
+
+            &:hover {
+              a {
+                text-decoration: underline;
+              }
+            }
+
+            a {
+              padding: 7px 4px;
+              font-weight: 600;
+              display: block;
+
+              &:hover {
+                color: $tt-cl-rd;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .body-content {
+      flex-basis: 61%;
+      margin: 10px 0;
+
+      h1 {
+        line-height: 2em;
+        letter-spacing: 0.08em;
+        word-spacing: 0.09em;
+
+        text: {
+          align: center;
+        }
+
+        font: {
+          weight: 500;
+          size: 2em;
+          family: $bangla-font;
+        }
+      }
+
+      .trending-today {
+        @include flex-layout();
+        margin-bottom: 13px;
+        box-shadow: $box-shadow;
+        @include border-radius(6px);
+        padding-right: 10px;
+
+        span {
+          border-radius: 5px;
+          padding-right: 10px;
+          padding: 7px;
+          border-bottom-left-radius: 6px;
+          border-top-left-radius: 6px;
+          text-transform: capitalize;
+          font-size: 1em;
+          background-color: $bd-cl-bl;
+          width: 11em;
+          color: $tt-cl-wh;
+        }
+
+        marquee {
+          font-size: 1.3em;
+          text-transform: capitalize;
+        }
+
+        .icons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            margin-left: 2px;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 900;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .slider-image {
+        position: relative;
+        margin-bottom: 20px;
+
+        img {
+          border-radius: 4px;
+        }
+
+        .img-content {
+          box-shadow: $box-shadow;
+          padding: 10px;
+          border-radius: 6px;
+        }
+
+        .slide {
+          i {
+            color: $tt-cl-wh;
+          }
+        }
+      }
+
+      .comment-blog {
+
+        .blog-div {
+          @include mrg-pdn-bxSD;
+
+          h2 {
+            font-family: 'Tiro bangla', serif;
+            font-size: 1.4em;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 16px;
+          }
+
+          .blog {
+            @include flex-layout($ai: flex-start);
+
+            .blog-profile {
+              flex-basis: 40%;
+              padding: 0.5%;
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-transform: capitalize;
+
+              .profile-img {
+                width: 45%;
+                text-align: center;
+                margin-bottom: 6px;
+              }
+
+              .social-media {
+                margin-top: 10px;
+
+                a {
+                  i {
+                    font-size: 1.7em;
+                    // color: orange;
+                  }
+                }
+              }
+            }
+
+            .blog-content {
+              flex-basis: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .right-side {
+      .headof {
+        @include mrg-pdn-bxSD;
+
+        h2 {
+          @include box-headline;
+          font-size: 0.85em;
+        }
+
+        h3 {
+          background: $bg-cl-blue;
+          color: $tt-cl-wh;
+          padding: 10px 15px;
+          border-top-left-radius: 20px;
+          margin: 10px 0;
+          text-transform: uppercase;
+          font-size: 1em;
+        }
+      }
+
+      .calender-date {
+        @include mrg-pdn-bxSD;
+
+        h2 {
+          @include box-headline;
+          font-size: 1.1em;
+        }
+
+        .watch-area {
+          @include flex-layout;
+          font-size: 1.3em;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
+        }
+
+        .calender {
+          text-transform: capitalize;
+          .month-year {
+            @include flex-layout;
+            font-weight: 500;
+            font-size: 1em;
+
+            .year-changer {
+              @include flex-layout;
+
+              span {
+                pre {
+                  font-size: 1.1em;
+                  padding: 0px 3px;
+                }
+              }
+            }
+          }
+
+          .calender-body {
+            @include flex-layout();
+          }
+        }
+      }
+
+      .parent-feedback {
+        @include mrg-pdn-bxSD;
+        position: relative;
+
+        h2 {
+          @include box-headline;
+          font-size: 1em;
+          padding-left: 18px;
+        }
+
+        .parent-blog {
+          position: relative;
+
+          .feedback-profile {
+            @include flex-layout;
+            margin-bottom: 6px;
+
+            .image {
+              flex-basis: 18%;
+              padding: 1%;
+            }
+
+            .social-media {
+              flex-basis: 11%;
+            }
+
+            .names {
+              flex-basis: 68%;
+            }
+
+            .social-media {
+              a {
+                font-size: 1.5em;
+              }
+            }
+          }
+
+          .slide {
+            i.fa-chevron-left {
+              left: -10%;
+            }
+
+            i.fa-chevron-right {
+              right: -10%;
+            }
+          }
+        }
+      }
+
+      .DC-social-media a {
+        width: 22%;
+
+        i {
+          font-size: 2em;
+          margin: 0.1em;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  box-shadow: 0 -2px 3px #00000026;
+
+  .buttom-menu {
+    background: #5e5e5e11;
+
+    ul {
+      @include flex-layout();
+
+
+      li {
+
+        a {
+          display: inline-block;
+          font-size: 1.1em;
+          padding: 19px 6px;
+          text-transform: capitalize;
+
+          &:hover {
+            color: $tt-cl-rd;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright-area {
+    background: $bg-cl-bl;
+    color: $tt-cl-wh;
+
+    .container {
+      @include flex-layout;
+      padding: 17px 0;
+
+      p {
+        font-size: 0.9em;
+        text-transform: capitalize;
+
+        a {
+          color: $tt-cl-wh;
+
+          &:hover {
+            color: $tt-cl-wh-hv;
+          }
+        }
+      }
+    }
+  }
+}
